@@ -7,7 +7,6 @@ import { CalendarHeart } from "lucide-react";
 
 const hertica = localFont({
   src: "../app/fonts/hertica.ttf",
-  // weight: "100 900",
 });
 
 const Navbar = () => {
@@ -98,15 +97,6 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        {/* <div className="menu hidden md:block" id="menu">
-          <ul className="menu-inner">
-            <li className="menu-item">
-              <a href="#work" className="menu-link">
-                Work
-              </a>
-            </li>
-          </ul>
-        </div> */}
         <div className="menu hidden md:block" id="menu">
           <ul className="menu-inner">
             <li className="menu-item">

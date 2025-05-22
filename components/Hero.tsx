@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 
 const hertica = localFont({
   src: "../app/fonts/hertica.ttf",
-  // weight: "100 900",
 });
 
 export default function Hero() {
@@ -17,11 +16,6 @@ export default function Hero() {
             Slay & Sparkle
           </h1>
         </div>
-        {/* <div className="grid grid-cols-3 gap-4 mb-20">
-          <h1 className=" text-black font-mono">006</h1>
-          <h1 className=" text-black font-mono">Identity design</h1>
-          <h1 className=" text-gray-300 font-mono">info</h1>
-        </div> */}
         <div className="flex flex-col md:grid md:grid-cols-4 gap-4">
           <div className="col-start-1 col-end-4 row-start-1 row-end-2 bg-[url('/lynx.jpg')] bg-cover bg-top h-[100vh]"></div>
           <div className="flex flex-col gap-5 md:gap-0 md:justify-between px-3 md:px-0">

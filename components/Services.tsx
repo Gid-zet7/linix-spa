@@ -3,12 +3,10 @@ import localFont from "next/font/local";
 
 const kringe = localFont({
   src: "../app/fonts/kringe.ttf",
-  // weight: "100 900",
 });
 
 const hertica = localFont({
   src: "../app/fonts/hertica.ttf",
-  // weight: "100 900",
 });
 
 export default function Services() {
