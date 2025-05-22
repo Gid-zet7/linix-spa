@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 // import {
 //   Select,
@@ -16,11 +15,11 @@ import localFont from "next/font/local";
 import { bookNew } from "@/lib/actions";
 import { useRouter } from "next/navigation";
 
-// const poppins = localFont({
-//   src: "../../app/fonts/Poppins-Medium.ttf",
-//   variable: "--font-poppins",
-//   weight: "100 900",
-// });
+const swipe = localFont({
+  src: "../app/fonts/Swipe.otf",
+  variable: "--font-poppins",
+  weight: "100 900",
+});
 
 export default function AppointmentForm() {
   const [email, setEmail] = useState("");
@@ -99,16 +98,18 @@ export default function AppointmentForm() {
 
   return (
     <>
-      <section className="h-screen grid grid-cols-1 md:grid-cols-2">
+      <section className="w-screen h-screen grid grid-cols-1 md:grid-cols-2">
         {/* Left Side */}
-        <div className="bg-[url('/lynxxx.JPG')] bg-cover bg-top w- h-[100vh]"></div>
-        <div className="flex flex-col-reverse w-full md:w-[60rem] px-4 md:px-0">
+        <div className="bg-[url('/lynxxx.JPG')] bg-cover bg-top h-[30vh] md:h-[100vh]"></div>
+
+        <div className="flex flex-col justify-center items-center w-full md:w-[60rem] px-4 md:px-0">
           <div className="flex-1 flex flex-col justify-center items-center">
-            <h1 className="text-xl font-bold my-4 grid place-content-center mt-6">
+            <h1
+              className={`clamp-text font-bold my-4 grid place-content-center mt-6 ${swipe.className}`}
+            >
               Book an appointment
             </h1>
             <form onSubmit={handleAppointment} className="w-full max-w-2xl">
-              {/* Name and Price */}
               <div className="mb-4 flex flex-col md:flex-row md:gap-10 gap-4">
                 <div className="flex-1">
                   <label
@@ -143,22 +144,39 @@ export default function AppointmentForm() {
                 </div>
               </div>
 
-              {/* Description */}
-              <div className="mb-4">
-                <label
-                  htmlFor="first_name"
-                  className="block font-semibold text-xs mb-2 "
-                >
-                  First Name <span className="text-red-500">*</span>
-                </label>
-                <Input
-                  type="text"
-                  id="first_name"
-                  className="w-full p-2 border rounded"
-                  onChange={(e) => setFirstName(e.target.value)}
-                  value={first_name}
-                  required
-                />
+              <div className="mb-4 flex flex-col md:flex-row md:gap-10 gap-4">
+                <div className="mb-4 flex-1">
+                  <label
+                    htmlFor="first_name"
+                    className="block font-semibold text-xs mb-2 "
+                  >
+                    First Name <span className="text-red-500">*</span>
+                  </label>
+                  <Input
+                    type="text"
+                    id="first_name"
+                    className="w-full p-2 border rounded"
+                    onChange={(e) => setFirstName(e.target.value)}
+                    value={first_name}
+                    required
+                  />
+                </div>
+                <div className="mb-4 flex-1">
+                  <label
+                    htmlFor="phone_number"
+                    className="block font-semibold text-xs mb-2 "
+                  >
+                    Phone Number <span className="text-red-500">*</span>
+                  </label>
+                  <Input
+                    type="text"
+                    id="phone_number"
+                    className="w-full p-2 border rounded"
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    value={phone_number}
+                    required
+                  />
+                </div>
               </div>
 
               {/* Rating and Category */}
@@ -210,19 +228,40 @@ export default function AppointmentForm() {
               </div>
             </div> */}
 
-              <div className="flex gap-2">
-                <Input
-                  type="date"
-                  id="date"
-                  value={date ? new Date(date).toISOString().split("T")[0] : ""}
-                  onChange={(e) => setDate(e.target.value)}
-                />
-                <Input
-                  type="time"
-                  id="time"
-                  value={time}
-                  onChange={(e) => setTime(e.target.value)}
-                />
+              <div className="mb-4 flex flex-col md:flex-row md:gap-10 gap-4">
+                <div className="mb-4 flex-1">
+                  <label
+                    htmlFor="date"
+                    className="block font-semibold text-xs mb-2 "
+                  >
+                    Date <span className="text-red-500">*</span>
+                  </label>
+                  <Input
+                    type="date"
+                    id="date"
+                    className="rounded"
+                    value={
+                      date ? new Date(date).toISOString().split("T")[0] : ""
+                    }
+                    onChange={(e) => setDate(e.target.value)}
+                  />
+                </div>
+
+                <div className="mb-4 flex-1">
+                  <label
+                    htmlFor="time"
+                    className="block font-semibold text-xs mb-2 "
+                  >
+                    Time <span className="text-red-500">*</span>
+                  </label>
+                  <Input
+                    type="time"
+                    id="time"
+                    className="rounded"
+                    value={time}
+                    onChange={(e) => setTime(e.target.value)}
+                  />
+                </div>
               </div>
 
               {/* Action Buttons */}
@@ -230,20 +269,27 @@ export default function AppointmentForm() {
                 <Button
                   type="submit"
                   // onClick={handleSubmit}
-                  className="w-full py-4 md:py-6 rounded-md text-sm md:text-base bg-black"
+                  className="w-full bg-gradient-to-r from-fuchsia-300 to-fuchsia-500 hover:bg-gradient-to-r hover:from-fuchsia-400 hover:to-fuchsia-600 transition duration-300 ease-in-out py-4 md:py-6 rounded-md text-sm md:text-base"
                 >
                   Book Now
                 </Button>
                 <Button
                   type="button"
                   variant={"outline"}
-                  className="w-full bg-black py-4 md:py-6 rounded-md text-sm md:text-base"
+                  className="w-full py-4 md:py-6 rounded-md text-sm md:text-base"
                   onClick={() => router.back()}
                 >
                   Back
                 </Button>
               </div>
             </form>
+          </div>
+          <div className="flex flex-col items-center my-8">
+            <div className="flex flex-col justify-center items-center">
+              <h3 className="font-bold">Hours</h3>
+              <p> Monday–Friday: 9AM–7PM Saturday: 10AM–5PM</p>
+            </div>
+            <p>Closed Sundays</p>
           </div>
         </div>
       </section>

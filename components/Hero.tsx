@@ -27,10 +27,7 @@ export default function Hero() {
           <div className="col-start-1 col-end-4 row-start-1 row-end-2 bg-[url('/lynx.jpg')] bg-cover bg-top h-[100vh]"></div>
           <div className="flex flex-col gap-5 md:gap-0 md:justify-between px-3 md:px-0">
             <p className="font-mono">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-              error similique sunt fugit architecto, aut quia deleniti eos odio
-              laborum voluptatibus quis impedit explicabo esse modi nesciunt
-              facilis cupiditate dignissimos?
+              Elevate your look with expert makeup artistry and breathtaking braided styles. Whether you crave bold glamour or elegant charm, we transform your vision into reality—because you deserve to shine!
             </p>
             <div className="flex flex-col gap-2">
               <h3 className="text-2xl text-gray-400 font-bold">Services</h3>

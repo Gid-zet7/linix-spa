@@ -168,8 +168,6 @@ button {
   cursor: pointer;
   user-select: none;
   border: none;
-  outline: none;
-  background: none;
 }
 
 img,

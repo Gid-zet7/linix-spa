@@ -1,6 +1,8 @@
 "use client";
 import { useEffect } from "react";
+import { Button } from "./ui/button";
 import localFont from "next/font/local";
+import { CalendarHeart } from "lucide-react";
 
 const hertica = localFont({
   src: "../app/fonts/hertica.ttf",
@@ -69,8 +71,13 @@ const Navbar = () => {
         <div className="menu block md:hidden" id="menu">
           <ul className="menu-inner">
             <li className="menu-item">
-              <a href="#work" className="menu-link">
-                Work
+              <a href="/book-appointment" className="menu-link">
+                <Button
+                  variant={"outline"}
+                  className=" font-bold text-md rounded-lg"
+                >
+                  Book us <CalendarHeart />
+                </Button>
               </a>
             </li>
             <li className="menu-item">
