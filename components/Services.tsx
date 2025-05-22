@@ -31,7 +31,7 @@ export default function Services() {
                 Ready to slay your next event or just treat yourself? Reach
                 out—we&apos;d love to bring your beauty vision to life.
               </p>
-              <p>📍 Visit Us: [Your Studio Address]</p>
+              <p>📍 Visit Us: opposite Darkuman Goil Gas Station</p>
             </div>
           </div>
         </div>
