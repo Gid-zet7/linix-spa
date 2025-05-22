@@ -32,45 +32,45 @@ export default function AppointmentForm() {
 
   const router = useRouter();
 
-  const [errors, setErrors] = useState<{
-    phone_number?: string;
-    address_line1?: string;
-    city?: string;
-  }>({});
+  // const [errors, setErrors] = useState<{
+  //   phone_number?: string;
+  //   address_line1?: string;
+  //   city?: string;
+  // }>({});
 
-  const validateForm = () => {
-    const newErrors: typeof errors = {};
-    let isValid = true;
+  // const validateForm = () => {
+  //   const newErrors: typeof errors = {};
+  //   let isValid = true;
 
-    if (!last_name?.trim()) {
-      newErrors.address_line1 = "Address is required";
-      isValid = false;
-    }
-    if (!first_name?.trim()) {
-      newErrors.city = "City is required";
-      isValid = false;
-    }
-    if (!phone_number?.trim()) {
-      newErrors.phone_number = "Phone number is required";
-      isValid = false;
-    }
-    if (!time?.trim()) {
-      newErrors.phone_number = "Time is required";
-      isValid = false;
-    }
-    if (!service_type?.trim()) {
-      newErrors.phone_number = "Service type is required";
-      isValid = false;
-    }
+  //   if (!last_name?.trim()) {
+  //     newErrors.address_line1 = "Address is required";
+  //     isValid = false;
+  //   }
+  //   if (!first_name?.trim()) {
+  //     newErrors.city = "City is required";
+  //     isValid = false;
+  //   }
+  //   if (!phone_number?.trim()) {
+  //     newErrors.phone_number = "Phone number is required";
+  //     isValid = false;
+  //   }
+  //   if (!time?.trim()) {
+  //     newErrors.phone_number = "Time is required";
+  //     isValid = false;
+  //   }
+  //   if (!service_type?.trim()) {
+  //     newErrors.phone_number = "Service type is required";
+  //     isValid = false;
+  //   }
 
-    setErrors(newErrors);
-    return isValid;
-  };
+  //   setErrors(newErrors);
+  //   return isValid;
+  // };
 
   const handleAppointment = async () => {
-    if (!validateForm()) {
-      return;
-    }
+    // if (!validateForm()) {
+    //   return;
+    // }
 
     try {
       const formData = new FormData();

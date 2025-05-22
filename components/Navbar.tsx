@@ -1,6 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 import localFont from "next/font/local";
 import { CalendarHeart } from "lucide-react";
 
@@ -57,12 +58,12 @@ const Navbar = () => {
   return (
     <header className="header font-mono text-" id="header">
       <nav className="flex justify-between items-center md:grid md:grid-cols-5 py-4 px-1">
-        <a
+        <Link
           href="/"
           className={`brand font-extrabold text-lg md:text-2xl ${hertica.className}`}
         >
           Linix Spa
-        </a>
+        </Link>
         <div className="burger" id="burger">
           <span className="burger-line"></span>
           <span className="burger-line"></span>
@@ -71,29 +72,29 @@ const Navbar = () => {
         <div className="menu block md:hidden" id="menu">
           <ul className="menu-inner">
             <li className="menu-item">
-              <a href="/book-appointment" className="menu-link">
+              <Link href="/book-appointment" className="menu-link">
                 <Button
                   variant={"outline"}
                   className=" font-bold text-md rounded-lg"
                 >
                   Book us <CalendarHeart />
                 </Button>
-              </a>
+              </Link>
             </li>
             <li className="menu-item">
-              <a href="#about" className="menu-link">
+              <Link href="#about" className="menu-link">
                 About
-              </a>
+              </Link>
             </li>
             <li className="menu-item">
-              <a href="#services" className="menu-link">
+              <Link href="#services" className="menu-link">
                 Services
-              </a>
+              </Link>
             </li>
             <li className="menu-item">
-              <a href="#contact" className="menu-link">
+              <Link href="#contact" className="menu-link">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -109,36 +110,36 @@ const Navbar = () => {
         <div className="menu hidden md:block" id="menu">
           <ul className="menu-inner">
             <li className="menu-item">
-              <a href="#about" className="menu-link">
+              <Link href="#about" className="menu-link">
                 About
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
         <div className="menu hidden md:block" id="menu">
           <ul className="menu-inner">
             <li className="menu-item">
-              <a href="#services" className="menu-link">
+              <Link href="#services" className="menu-link">
                 Services
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
         <div className="menu hidden md:block" id="menu">
           <ul className="menu-inner">
             <li className="menu-item">
-              <a href="#contact" className="menu-link">
+              <Link href="#contact" className="menu-link">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
         <div className="menu hidden md:block" id="menu">
           <ul className="menu-inner font-bold text-lg bg-black rounded-lg hover:bg-gray-800 transition duration-300 ease-in-out px-4 py-2">
             <li className="menu-item">
-              <a href="/book-appointment" className=" text-white text-sm">
+              <Link href="/book-appointment" className=" text-white text-sm">
                 Book Now
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

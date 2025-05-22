@@ -1,10 +1,4 @@
 import React from "react";
-import localFont from "next/font/local";
-
-const kringe = localFont({
-  src: "../app/fonts/kringe.ttf",
-  // weight: "100 900",
-});
 
 export default function About() {
   return (

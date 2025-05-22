@@ -1,5 +1,4 @@
 import React from "react";
-import ParallaxText from "./ParallaxText";
 import localFont from "next/font/local";
 
 const kringe = localFont({
