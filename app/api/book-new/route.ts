@@ -37,7 +37,9 @@ export const POST = async (request: Request) => {
     const appointment = await UserModel.create(productObj);
 
     if (appointment) {
-      return new Response("Newappointment added successfully", { status: 200 });
+      return new Response(JSON.stringify({ message: "success" }), {
+        headers: { "Content-Type": "application/json" },
+      });
     }
   } catch {
     // console.error(error);
