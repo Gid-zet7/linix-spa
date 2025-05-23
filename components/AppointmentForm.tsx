@@ -100,7 +100,7 @@ export default function AppointmentForm() {
     <>
       <section className="w-screen h-screen grid grid-cols-1 md:grid-cols-2">
         {/* Left Side */}
-        <div className="bg-[url('/lynxxx.JPG')] bg-cover bg-top h-[30vh] md:h-[100vh]"></div>
+        <div className="bg-[url('/lynxxx.jpeg')] bg-cover bg-top h-[30vh] md:h-[100vh]"></div>
 
         <div className="flex flex-col justify-center items-center w-full md:w-[60rem] px-4 md:px-0">
           <div className="flex-1 flex flex-col justify-center items-center">

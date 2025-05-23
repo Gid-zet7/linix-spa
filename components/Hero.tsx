@@ -17,7 +17,7 @@ export default function Hero() {
           </h1>
         </div>
         <div className="flex flex-col md:grid md:grid-cols-4 gap-4">
-          <div className="col-start-1 col-end-4 row-start-1 row-end-2 bg-[url('/lynx.jpg')] bg-cover bg-top h-[100vh]"></div>
+          <div className="col-start-1 col-end-4 row-start-1 row-end-2 bg-[url('/lynx.jpeg')] bg-cover bg-top h-[100vh]"></div>
           <div className="flex flex-col gap-5 md:gap-0 md:justify-between px-3 md:px-0">
             <p className="font-mono">
               Elevate your look with expert makeup artistry and breathtaking

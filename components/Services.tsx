@@ -19,7 +19,7 @@ export default function Services() {
           <h1 className=" text-gray-300">info</h1>
         </div>
         <div className="flex flex-col md:grid md:grid-cols-4 gap-4">
-          <div className="flex justify-center items-center col-start-1 col-end-4 row-start-1 row-end-2 bg-[url('/lynxxx.JPG')] bg-cover bg-top h-[100vh]">
+          <div className="flex justify-center items-center col-start-1 col-end-4 row-start-1 row-end-2 bg-[url('/lynxxx.jpeg')] bg-cover bg-top h-[100vh]">
             <button className={`text-white ${kringe.className} clamp-text`}>
               Book Now
             </button>
