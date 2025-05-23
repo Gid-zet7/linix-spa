@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 import { CalendarHeart } from "lucide-react";
+import Image from "next/image";
 
 const runner = localFont({
   src: "../app/fonts/runner.otf",
@@ -22,7 +23,7 @@ export default function Footer() {
           </div>
           <div className="flex mt-8 flex-col md:flex-row md:justify-between">
             <p className="w-full md:w-2/3 text-gray-400">
-              Have questions? Slide into our DMs on Instagram/Facebook for quick
+              Have questions? Slide into our DMs on Instagram/TikTok for quick
               replies! 💌
             </p>
             <div className="w-44 pt-6 md:pt-0">
@@ -50,8 +51,17 @@ export default function Footer() {
                 Contact
               </a>
               <div className="flex flex-row space-x-8 items-center justify-between">
-                <a>
-                  <svg
+                <a
+                  href="https://www.tiktok.com/@linixspaandsalon?_t=ZM-8wZXzAAmOGb&_r=1"
+                  target="_blank"
+                >
+                  <Image
+                    src={"/tiktok.svg"}
+                    alt="logo"
+                    width={22}
+                    height={22}
+                  />
+                  {/* <svg
                     width="6"
                     height="12"
                     viewBox="0 0 6 12"
@@ -62,9 +72,12 @@ export default function Footer() {
                       d="M3.89782 12V6.53514H5.67481L5.93895 4.39547H3.89782V3.03259C3.89782 2.41516 4.06363 1.99243 4.91774 1.99243H6V0.0847928C5.47342 0.0262443 4.94412 -0.00202566 4.41453 0.000112795C2.84383 0.000112795 1.76542 0.994936 1.76542 2.82122V4.39147H0V6.53114H1.76928V12H3.89782Z"
                       fill="#000000"
                     />
-                  </svg>
+                  </svg> */}
                 </a>
-                <a>
+                <a
+                  href="https://www.instagram.com/linix_salon?igsh=NWJhZXBqZXZ2ZTc4&utm_source=qr"
+                  target="_blank"
+                >
                   <svg
                     width="12"
                     height="13"
@@ -86,7 +99,10 @@ export default function Footer() {
                     />
                   </svg>
                 </a>
-                <a href="https://www.youtube.com/channel/UCjtCbnkIaiCJgj13sEZ9iqw">
+                <a
+                  href="https://youtube.com/@linixspaandsalon?si=PN_BHZdNCebEar9P"
+                  target="_blank"
+                >
                   <svg
                     width="13"
                     height="9"

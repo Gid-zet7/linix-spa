@@ -31,3 +31,50 @@ export const bookNew = async (formData: FormData) => {
     return undefined;
   }
 };
+
+export const sendEmail = async (
+  email: string | undefined,
+  last_name: string | undefined,
+  first_name: string | undefined,
+  phone_number: string | undefined,
+  date: string | undefined,
+  time: string | undefined,
+  service_type: string | undefined
+) => {
+  const endpoint = `${SERVER_URL}/mailgun`;
+
+  try {
+    const res = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        last_name,
+        first_name,
+        phone_number,
+        date,
+        time,
+        service_type,
+      }),
+    });
+
+    if (!res.ok) {
+      const errorText = await res.text();
+      console.error("Server response:", errorText);
+      return undefined;
+    }
+
+    const contentType = res.headers.get("content-type");
+
+    if (contentType && contentType.includes("application/json")) {
+      return await res.json();
+    } else {
+      return await res.text();
+    }
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return undefined;
+  }
+};
