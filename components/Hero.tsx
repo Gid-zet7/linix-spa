@@ -25,7 +25,7 @@ export default function Hero() {
               we transform your vision into reality—because you deserve to
               shine!
             </p>
-            <div className="flex flex-col gap-2">
+            <div id="services" className="flex flex-col gap-2">
               <h3 className="text-2xl text-gray-400 font-bold">Services</h3>
               <ul className="font-mono">
                 <li>Braids</li>

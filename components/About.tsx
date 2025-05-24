@@ -3,7 +3,7 @@ import React from "react";
 export default function About() {
   return (
     <>
-      <section className="hero_grid mt-36 ">
+      <section id="about" className="hero_grid mt-36 ">
         <div className="flex justify-around items-center gap-4 mb-36">
           <h1 className=" text-black font-mono">006</h1>
           <h1 className=" text-black font-mono">Identity design</h1>

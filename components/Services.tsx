@@ -12,7 +12,7 @@ const hertica = localFont({
 export default function Services() {
   return (
     <>
-      <section className="hero_grid mt-36 ">
+      <section id="contact" className="hero_grid mt-36 ">
         <div className={`mb-36 clamp-text ${hertica.className} px-5`}>
           <h1 className=" text-black">006</h1>
           <h1 className=" text-black">Identity design</h1>
