@@ -123,18 +123,6 @@ export default function AppointmentForm() {
     </div>`
       );
 
-      console.log(
-        email,
-        last_name,
-        first_name,
-        phone_number,
-        date,
-        time,
-        service_type
-      );
-
-      console.log("response", res);
-
       if (res === undefined) setError("Failed to send");
       if (res.message === "success") setIsSuccess("success");
     } catch (error) {
