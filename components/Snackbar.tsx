@@ -22,9 +22,7 @@ export default function Snackbar({ message }: Props) {
       <div
         id="snackbar"
         className={`${
-          message === "Email sent successfully"
-            ? "bg-emerald-300"
-            : "bg-red-400"
+          message === "success" ? "bg-emerald-300" : "bg-red-400"
         } text-white p-4 rounded-md fixed bottom-12 right-32 md:right-2/4 flex justify-between items-center z-[100]`}
         style={{ display: "block" }}
       >
