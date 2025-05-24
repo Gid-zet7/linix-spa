@@ -32,7 +32,7 @@ export const bookNew = async (formData: FormData) => {
   }
 };
 
-export const sendEmail = async (email: string, htmlContent: any) => {
+export const sendEmail = async (email: string, htmlContent: string) => {
   const endpoint = `${SERVER_URL}/mailgun`;
 
   try {
