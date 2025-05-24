@@ -14,6 +14,9 @@ const Navbar = () => {
     const navbarMenu = document.getElementById("menu");
     const burgerMenu = document.getElementById("burger");
     const overlayMenu = document.querySelector(".overlay");
+    const about = document.getElementById("about-link");
+    const services = document.getElementById("services-link");
+    const contact = document.getElementById("contact-link");
 
     if (burgerMenu && navbarMenu) {
       const toggleMenu = () => {
@@ -22,6 +25,9 @@ const Navbar = () => {
       };
 
       burgerMenu.addEventListener("click", toggleMenu);
+      about?.addEventListener("click", toggleMenu);
+      services?.addEventListener("click", toggleMenu);
+      contact?.addEventListener("click", toggleMenu);
 
       return () => burgerMenu.removeEventListener("click", toggleMenu);
     }
@@ -81,17 +87,17 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="menu-item">
-              <Link href="#about" className="menu-link">
+              <Link href="#about" id="about-link" className="menu-link">
                 About
               </Link>
             </li>
             <li className="menu-item">
-              <Link href="#services" className="menu-link">
+              <Link href="#services" id="services-link" className="menu-link">
                 Services
               </Link>
             </li>
             <li className="menu-item">
-              <Link href="#contact" className="menu-link">
+              <Link href="#contact" id="contact-link" className="menu-link">
                 Contact
               </Link>
             </li>
