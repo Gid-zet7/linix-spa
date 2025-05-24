@@ -14,40 +14,21 @@ if (!API_KEY || !DOMAIN) {
 
 export const POST = async (request: Request) => {
   try {
-    const {
-      email,
-      last_name,
-      first_name,
-      phone_number,
-      date,
-      time,
-      service_type,
-    } = await request.json();
+    const { email, htmlContent } = await request.json();
 
-    console.log(
-      "Received data:",
-      email,
-      last_name,
-      first_name,
-      phone_number,
-      date,
-      time,
-      service_type
-    );
-
-    if (
-      !last_name ||
-      !first_name ||
-      !phone_number ||
-      !date ||
-      !time
-      // !service_type
-    ) {
-      return NextResponse.json(
-        { error: "Missing required fields (emailTo, subject, message)" },
-        { status: 400 }
-      );
-    }
+    // if (
+    //   !last_name ||
+    //   !first_name ||
+    //   !phone_number ||
+    //   !date ||
+    //   !time ||
+    //   !service_type
+    // ) {
+    //   return NextResponse.json(
+    //     { error: "Missing required fields (emailTo, subject, message)" },
+    //     { status: 400 }
+    //   );
+    // }
 
     // Initialize Mailgun
     const mailgun = new Mailgun(FormData);
@@ -60,9 +41,8 @@ export const POST = async (request: Request) => {
     const result = await mg.messages.create(DOMAIN, {
       from: email,
       to: ["adontenggideon57@gmail.com", "linixspaandsalon@gmail.com"],
-      subject: `New appointment from ${last_name} ${first_name}`,
-      text: `message: ${last_name} ${first_name} has booked an appointment on ${date} at ${time} for ${service_type}. Contact number: ${phone_number}`,
-      html: `<p>${last_name} ${first_name} has booked an appointment on ${date} at ${time} for ${service_type}. Contact number: ${phone_number}</p>`,
+      subject: "New appointment",
+      html: htmlContent,
     });
 
     // Log and return success response

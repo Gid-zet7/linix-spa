@@ -103,12 +103,24 @@ export default function AppointmentForm() {
     try {
       const res = await sendEmail(
         email,
-        last_name,
-        first_name,
-        phone_number,
-        date,
-        time,
-        service_type
+        `<div>
+        <h2>New Appointment Booking</h2>
+    </div>
+    
+    <p>${first_name} ${last_name} has scheduled an appointment with your company.</p>
+    
+    <div>
+        <p><span>Service Type:</span> ${service_type}</p>
+        <p><span>Date:</span> ${date}</p>
+        <p><span>Time:</span> ${time}</p>
+        <p><span>Contact Number:</span> ${phone_number}</p>
+    </div>
+    
+    <p>Please confirm availability and prepare accordingly.</p>
+    
+    <div>
+        <p>This is an automated notification. Please do not reply to this message.</p>
+    </div>`
       );
 
       console.log(
@@ -120,6 +132,8 @@ export default function AppointmentForm() {
         time,
         service_type
       );
+
+      console.log("response", res);
 
       if (res === undefined) setError("Failed to send");
       if (res.message === "success") setIsSuccess("success");

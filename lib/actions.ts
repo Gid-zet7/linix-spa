@@ -32,15 +32,7 @@ export const bookNew = async (formData: FormData) => {
   }
 };
 
-export const sendEmail = async (
-  email: string | undefined,
-  last_name: string | undefined,
-  first_name: string | undefined,
-  phone_number: string | undefined,
-  date: string | undefined,
-  time: string | undefined,
-  service_type: string | undefined
-) => {
+export const sendEmail = async (email: string, htmlContent: any) => {
   const endpoint = `${SERVER_URL}/mailgun`;
 
   try {
@@ -51,12 +43,7 @@ export const sendEmail = async (
       },
       body: JSON.stringify({
         email,
-        last_name,
-        first_name,
-        phone_number,
-        date,
-        time,
-        service_type,
+        htmlContent,
       }),
     });
 
